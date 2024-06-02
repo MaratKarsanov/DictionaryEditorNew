@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34511.84
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryEditorNew", "DictionaryEditorNew\DictionaryEditorNew.csproj", "{F6EEFD70-8927-4012-9CA8-F8D1A066EF14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DictionaryEditorDbNew", "DictionaryEditorDbNew\DictionaryEditorDbNew.csproj", "{69173771-F047-4C04-A727-CA3260DA99BF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6EEFD70-8927-4012-9CA8-F8D1A066EF14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6EEFD70-8927-4012-9CA8-F8D1A066EF14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6EEFD70-8927-4012-9CA8-F8D1A066EF14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6EEFD70-8927-4012-9CA8-F8D1A066EF14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69173771-F047-4C04-A727-CA3260DA99BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69173771-F047-4C04-A727-CA3260DA99BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69173771-F047-4C04-A727-CA3260DA99BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69173771-F047-4C04-A727-CA3260DA99BF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9455ED14-1858-4628-913A-DBADCA7E40A9}
+	EndGlobalSection
+EndGlobal
