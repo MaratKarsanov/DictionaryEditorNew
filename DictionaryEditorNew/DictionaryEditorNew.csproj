@@ -7,10 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Admin\Views\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
@@ -27,6 +23,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DictionaryEditorDbNew\DictionaryEditorDbNew.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Areas\Redactor\Shared\" />
+    <Folder Include="Areas\Admin\Shared\" />
+    <Folder Include="Areas\RegisteredUser\Shared\" />
   </ItemGroup>
 
 </Project>

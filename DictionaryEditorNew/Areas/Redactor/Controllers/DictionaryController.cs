@@ -1,8 +1,9 @@
 ﻿using DictionaryEditorDbNew;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DictionaryEditorNew.Admin.Controllers
+namespace DictionaryEditorNew.Areas.Redactor.Controllers
 {
+    [Area("Redactor")]
     public class DictionaryController : Controller
     {
         private UserDbRepository userRepository;
@@ -15,10 +16,12 @@ namespace DictionaryEditorNew.Admin.Controllers
         {
             var userName = Request.Cookies["userLogin"];
             if (userName is null || userName == string.Empty)
-                return View();
+                return RedirectToAction("Index", "ResearchMod");
             var user = userRepository.TryGetByLogin(userName);
             ViewData["userRole"] = user.Role.Name;
-            return View((object)user.Role.Name);
+            
+                return View("Index");
+            //else return RedirectToAction("Index", "ResearchMod");
         }
     }
 }

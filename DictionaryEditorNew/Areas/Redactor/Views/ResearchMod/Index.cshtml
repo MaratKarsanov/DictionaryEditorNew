@@ -1,8 +1,9 @@
 ﻿@model List<OssetianWord>
 
 <div class="research-mod">
+    @await Component.InvokeAsync("Navbar", "Redactor")
     <h2>Режим просмотра</h2>
-    @await Component.InvokeAsync("Navbar", "User")
+   
    
     <div class="research-mod__words-list">
         @foreach (var word in Model)

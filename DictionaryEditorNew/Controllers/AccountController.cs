@@ -17,10 +17,10 @@ namespace DictionaryEditorNew.Controllers
             this.roleRepository = roleRepository;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
+        //public IActionResult Index()
+        //{
+        //    return View();
+        //}
 
         public IActionResult Login()
         {
@@ -47,7 +47,10 @@ namespace DictionaryEditorNew.Controllers
             if (autorizationData.LockoutEnabled)
                 cookieOptions.Expires = DateTime.Now.AddMonths(1);
             Response.Cookies.Append("userLogin", autorizationData.Login, cookieOptions);
-            return RedirectToAction("Index", "Home");
+           
+           
+           return RedirectToAction("Index", "Home");
+
         }
 
         public IActionResult Register()
@@ -72,11 +75,12 @@ namespace DictionaryEditorNew.Controllers
         }
 
         public IActionResult Logout()
-        {
+        {           
             var cookieOptions = new CookieOptions()
             {
                 Expires = DateTime.Now.AddMonths(-1)
             };
+            Response.Cookies.Append("lastWordId", string.Empty, cookieOptions);
             Response.Cookies.Append("userLogin", string.Empty, cookieOptions);
             return RedirectToAction("Index", "Home");
         }
