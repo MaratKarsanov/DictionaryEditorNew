@@ -1,0 +1,29 @@
+﻿@model IEnumerable<UserViewModel>
+
+<div class="row">
+    <div class="col-9">
+        <h2>Список пользователей</h2>
+        @if (Model.Count() > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Имя пользователя</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-area="Admin" asp-action="Edit" asp-controller="User" asp-route-login="@user.Login">
+                                    @user.Login
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+    </div>
+</div>

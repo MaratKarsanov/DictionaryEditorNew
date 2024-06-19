@@ -54,7 +54,10 @@ body {
         text-decoration: none;
     }
 
-
+.header{
+    display: flex;
+    flex-direction:row;
+}
 
 
 
@@ -273,3 +276,100 @@ body {
     align-items: start;
     justify-content: center;
 }
+
+
+
+/* Общий стиль для контейнера */
+.research-mod__one-word {
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+/* Стили для основной информации */
+.one-word__info-main-info {
+    margin-bottom: 20px;
+}
+
+    .one-word__info-main-info input,
+    .one-word__info-main-info select {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+/* Стили для вторичной информации */
+.one-word__info-secondary-info {
+    margin-bottom: 20px;
+}
+
+    .one-word__info-secondary-info textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+/* Стили для примеров */
+.one-word__info-secondary-info__examples {
+    margin-bottom: 20px;
+}
+
+    .one-word__info-secondary-info__examples input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+/* Стили для форм множественного и единственного числа */
+.one-word__info-secondary-info__forms input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* Стили для падежей */
+.one-word__info-secondary-info__cases input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Адаптивные стили для мобильных устройств */
+@media (max-width: 768px) {
+    .research-mod__one-word {
+        padding: 10px;
+    }
+
+    .one-word__info-main-info input,
+    .one-word__info-main-info select,
+    .one-word__info-secondary-info textarea,
+    .one-word__info-secondary-info__examples input,
+    .one-word__info-secondary-info__forms input,
+    .one-word__info-secondary-info__cases input {
+        font-size: 14px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+

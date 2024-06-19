@@ -32,6 +32,7 @@ builder.Services.AddTransient<ExamplesDbRepository>();
 builder.Services.AddTransient<UserDbRepository>();
 builder.Services.AddTransient<RoleDbRepository>();
 builder.Services.AddTransient<RusWordsHashSet>();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 
 var app = builder.Build();

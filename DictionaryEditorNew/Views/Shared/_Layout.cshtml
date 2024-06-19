@@ -9,7 +9,13 @@
     <link rel="stylesheet" href="~/DictionaryEditor2.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>@await Component.InvokeAsync("Account")</header>
+    <header>
+        <div class="header">
+            @await Component.InvokeAsync("Account")
+            @await Component.InvokeAsync("Admin")
+        </div>
+       
+    </header>
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
