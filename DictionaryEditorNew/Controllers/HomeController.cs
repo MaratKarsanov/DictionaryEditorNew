@@ -35,8 +35,8 @@ namespace DictionaryEditorNew.Controllers
 
         public IActionResult Index()
         {
-            var userLogin = Request.Cookies["userLogin"] ?? "User";
-            var user = userRepository.TryGetByLogin(userLogin);
+            string userLogin = Request.Cookies["userLogin"] ?? "User";
+            User user = userRepository.TryGetByLogin(userLogin);
             if(user == null) 
                 return View();
             else if(user.RoleName == "Admin")
