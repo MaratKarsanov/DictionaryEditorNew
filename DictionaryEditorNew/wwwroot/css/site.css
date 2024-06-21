@@ -169,18 +169,18 @@ body {
     color: white;
 }
 
-    .research-mod__words-list-osset > a {
-        color: gray;
-    }
-    .research-mod__words-list-osset:hover > a {
-        color: white;
-    }
+.research-mod__words-list-osset > a {
+    color: gray;
+}
+.research-mod__words-list-osset:hover > a {
+    color: white;
+}
 
-    .research-mod__words-list-russ {
-        display: flex;
-        align-items: flex-start;
-        width: 40%
-    }
+.research-mod__words-list-russ {
+    display: flex;
+    align-items: flex-start;
+    width: 40%
+}
 
 
 
