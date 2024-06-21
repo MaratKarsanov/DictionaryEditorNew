@@ -17,11 +17,7 @@ namespace DictionaryEditorNew.Controllers
             this.roleRepository = roleRepository;
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View();
-        //}
-
+       
         public IActionResult Login()
         {
             return View();

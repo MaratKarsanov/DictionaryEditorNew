@@ -6,23 +6,11 @@ using DictionaryEditorNew;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 builder.Services.AddControllersWithViews();
 
 string connection = builder.Configuration.GetConnectionString("dictionary_json");
 
-//builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<DatabaseContext>();
-
-//builder.Services.ConfigureApplicationCookie(options =>
-//{
-//    options.ExpireTimeSpan = TimeSpan.FromDays(30);
-//    options.LoginPath = "/Account/Login";
-//    options.LogoutPath = "/Account/Logout";
-//    options.Cookie = new CookieBuilder
-//    {
-//        IsEssential = true
-//    };
-//});
 
 builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connection));
 builder.Services.AddTransient<DictionariesRepository>();

@@ -21,7 +21,7 @@ namespace DictionaryEditorDbNew
             //List < OssetianWord > words = new List < OssetianWord >();
             var first500Words = databaseContext.OssetianWords.Include(x => x.Examples).Include(x => x.RussianWords).Include(x => x.Cases)
                                        .OrderBy(w => w.Word) // Опционально, сортировка по Id или другому полю
-                                       .Take(500)
+                                     //  .Take(500)
                                        .ToList();
             return first500Words;
 
