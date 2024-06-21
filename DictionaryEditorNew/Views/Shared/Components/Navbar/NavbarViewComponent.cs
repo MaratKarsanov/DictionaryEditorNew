@@ -14,6 +14,10 @@ namespace DictionaryEditorNew.Views.Shared.Components.Navbar
             {
                 return View("Redactor");
             }
+            else if (role == "UnLoginUser")
+            {
+                return View("UnLoginUser");
+            }
             else
             {
                 return View("Admin");

@@ -27,13 +27,13 @@ namespace DictionaryEditorDbNew
             databaseContext.SaveChanges();
         }
         
-        public void AddNewWord(string word, OssetianWord ossetWord)
+        public void AddNewWord(string word, ForeignWord ossetWord)
         {
             RussianWord newWord = new RussianWord
             {
                 Id = Guid.NewGuid(),
                 Word = word,
-                OssetianWords = new List<OssetianWord> { ossetWord }
+                ForeignWords = new List<ForeignWord> { ossetWord }
             };
             databaseContext.RussianWords.Add(newWord);
             ossetWord.RussianWords.Add(newWord);

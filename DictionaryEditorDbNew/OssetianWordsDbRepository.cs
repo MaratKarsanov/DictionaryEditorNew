@@ -16,25 +16,25 @@ namespace DictionaryEditorDbNew
             this.databaseContext = databaseContext;
         }
 
-        public List<OssetianWord> GetWords()
+        public List<ForeignWord> GetWords()
         {
             //List < OssetianWord > words = new List < OssetianWord >();
-            var first500Words = databaseContext.OssetianWords.Include(x => x.Examples).Include(x => x.RussianWords).Include(x => x.Cases)
+            var first500Words = databaseContext.ForeignWords.Include(x => x.Examples).Include(x => x.RussianWords)
                                        .OrderBy(w => w.Word) // Опционально, сортировка по Id или другому полю
-                                     //  .Take(500)
+                                       .Take(100)
                                        .ToList();
             return first500Words;
 
         }
-        public OssetianWord TryGetById(Guid id)
+        public ForeignWord TryGetById(Guid id)
         {
-            return databaseContext.OssetianWords.Include(x => x.Examples).Include(x => x.Cases).Include(x => x.RussianWords).FirstOrDefault(x => x.Id == id);
+            return databaseContext.ForeignWords.Include(x => x.Examples).Include(x => x.RussianWords).FirstOrDefault(x => x.Id == id);
         }
     
 
-        public void AddWord(OssetianWord word)
+        public void AddWord(ForeignWord word)
         {
-            databaseContext.OssetianWords.Add(word);
+            databaseContext.ForeignWords.Add(word);
             databaseContext.SaveChanges();
         }
     }

@@ -2,17 +2,17 @@
 
 @if (Model is null || Model == string.Empty)
 {
-    <a class="nav-link text-dark"
+    <a class="nav-link"
        asp-area=""
        asp-controller="Account"
        asp-action="Login">
-        Login
+        Войти в аккаунт
     </a>
     return;
 }
-<a class="nav-link text-dark"
+<a class="nav-link"
    asp-area=""
    asp-controller="Account"
    asp-action="Logout">
-    Logout
+    Выйти
 </a>

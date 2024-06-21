@@ -1,4 +1,5 @@
 ﻿using DictionaryEditorDbNew;
+using DictionaryEditorDbNew.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DictionaryEditorNew.Controllers
@@ -13,13 +14,13 @@ namespace DictionaryEditorNew.Controllers
 
         public IActionResult Index()
         {
-            var wordsList = ossetianWordsDbRepository.GetWords();
+            List<ForeignWord> wordsList = ossetianWordsDbRepository.GetWords();
             return View(wordsList);
         }
 
         public IActionResult OneWord(Guid id)
         {
-            var ossetianWord = ossetianWordsDbRepository.TryGetById(id);
+            ForeignWord ossetianWord = ossetianWordsDbRepository.TryGetById(id);
             return View(ossetianWord);
         }
     }

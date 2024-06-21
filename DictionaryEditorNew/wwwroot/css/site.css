@@ -16,7 +16,28 @@ html {
     position: relative;
     min-height: 100%;
 }
+.navbar-nav {
+    flex-direction: row;
+}
 
+    .navbar-nav .nav-item {
+        margin-left: 10px;
+    }
+
+    .navbar-nav.ml-auto {
+        margin-left: auto;
+    }
+.logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+    .logo img {
+        width: 50px;
+        height: 50;
+        margin-right: 10px;
+    }
 body {
     margin-bottom: 60px;
 }
