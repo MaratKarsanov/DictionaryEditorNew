@@ -29,18 +29,18 @@ namespace DictionaryEditorNew.Controllers
         }
         public IActionResult OneWord(Guid id)
         {
-            OssetianWord word = ossetianWordsDbRepository.TryGetById(id);
+            ForeignWord word = ossetianWordsDbRepository.TryGetById(id);
             return View(word);
         }
 
         [HttpPost]
-        public IActionResult SaveChanges(Guid id, string? word, string? singular, string? plural, string? Case, Tense tense, string rusWords)
+        public IActionResult SaveChanges(Guid id, string? word, string? singular, string? plural, Tense tense, string rusWords)
         {
-            OssetianWord ossetWord = ossetianWordsDbRepository.TryGetById(id);
+            ForeignWord ossetWord = ossetianWordsDbRepository.TryGetById(id);
             if (word != null) { ossetWord.Word = word; }
             if (singular != null) { ossetWord.Singular = singular; }
             if (plural != null) { ossetWord.Plural = plural; }
-            if (Case != null) { ossetWord.Case = Case; }
+        
             if (tense == 0) ossetWord.Tense = Tense.thePresent;
             else if ((int)tense == 1) ossetWord.Tense = Tense.thePast;
             else if ((int)tense == 2) ossetWord.Tense = Tense.theFuture;
@@ -68,7 +68,7 @@ namespace DictionaryEditorNew.Controllers
                 {
                     needDelete.Add(rusWordss);//добавим в список на удаление, потому что нельзя в цикле менять лист
                     //ossetWord.RussianWords.Remove(rusWordss);//удаляем связь осет слова с тем, чего нет в списке
-                    rusWordss.OssetianWords.Remove(ossetWord);//и наоборот
+                    rusWordss.ForeignWords.Remove(ossetWord);//и наоборот
                                       
                 }
                 

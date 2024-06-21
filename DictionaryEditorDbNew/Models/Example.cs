@@ -12,7 +12,7 @@ namespace DictionaryEditorDbNew.Models
         public string? Sentence { get; set; }    
         public string? Translation { get; set; }
 
-        public OssetianWord OssetianWord { get; set; }
+        public ForeignWord ForeignWord { get; set; }
 
     }
 }

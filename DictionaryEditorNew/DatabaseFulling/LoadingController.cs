@@ -63,7 +63,7 @@ namespace DictionaryEditorNew.DatabaseFulling
             dictionariesDbRepository.AddDict(newDict);
             foreach (var word in res)
             {
-                OssetianWord ossetianWord = new OssetianWord
+                ForeignWord ossetianWord = new ForeignWord
                 {
                     Id = Guid.NewGuid(),
                     Word = word.OssetianWord,
@@ -77,7 +77,7 @@ namespace DictionaryEditorNew.DatabaseFulling
                         RussianWord existingRussianWord = russianWordsDbRepository.TryGetByWord(translation);
                         if (existingRussianWord != null)
                         {
-                            existingRussianWord.OssetianWords.Add(ossetianWord);
+                            existingRussianWord.ForeignWords.Add(ossetianWord);
 
 
                             ossetianWord.RussianWords.Add(existingRussianWord);
@@ -89,7 +89,7 @@ namespace DictionaryEditorNew.DatabaseFulling
                             {
                                 Id = Guid.NewGuid(),
                                 Word = translation,
-                                OssetianWords = new List<OssetianWord>()
+                                ForeignWords = new List<ForeignWord>()
                                 {
                                     ossetianWord
                                 },
@@ -106,7 +106,7 @@ namespace DictionaryEditorNew.DatabaseFulling
                             Id = Guid.NewGuid(),
                             Sentence = example.Item1,
                             Translation = example.Item2,
-                            OssetianWord = ossetianWord
+                            ForeignWord = ossetianWord
                         };
 
                         examplesDbRepository.AddExample(newExample);

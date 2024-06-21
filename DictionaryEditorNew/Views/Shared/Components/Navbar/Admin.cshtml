@@ -1,9 +1,48 @@
-﻿<nav aria-label="breadcrumb" class="breadcrumb">
+﻿@* <nav aria-label="breadcrumb" class="breadcrumb">
     <ol class="breadcrumb">
         <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item active">Главная</a>
         <a asp-area="Admin" asp-controller="Home" asp-action="Index" class="breadcrumb-item active" aria-current="page">Меню словаря</a>
         <a asp-area="Admin" asp-controller="Edit" asp-action="Index" class="breadcrumb-item active">Режим редактирования</a>
         <a asp-area="Admin" asp-controller="ResearchMod" asp-action="Index" class="breadcrumb-item active">Режим просмотра</a>
     </ol>
+</nav> *@
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="logo">
+        <img src="open-book.png" alt="Логотип Ossetian Lexicon">
+    </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="#">Словари <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a asp-area="Admin" asp-controller="Edit" asp-action="Index" class="nav-link">Редактор</a>
+            </li>
+            <li class="nav-item">
+                <a asp-area="Admin" asp-controller="ResearchMod" asp-action="Index" class="nav-link">Просмотр</a>
+            </li>
+            <li class="nav-item">
+                <a asp-area="Admin" asp-controller="Index" asp-action="Index" class="nav-link">Пользователи</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a asp-controller="Home" asp-action="Devs" class="nav-link">О нас</a>
+            </li>
+            <li class="nav-item">
+                <a asp-area="" asp-controller="Account" asp-action="Login" class="nav-link">Войти в аккаунт</a>
+            </li>
+        </ul>
+    </div>
 </nav>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+</body>
 

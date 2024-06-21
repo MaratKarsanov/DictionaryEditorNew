@@ -11,6 +11,6 @@ namespace DictionaryEditorDbNew.Models
     {
         public Guid Id { get; set; }
         public string Word { get; set; }
-        public List<OssetianWord> OssetianWords { get; set; } 
+        public List<ForeignWord> ForeignWords { get; set; } 
     }
 }

@@ -10,10 +10,9 @@
 </head>
 <body>
     <header>
-        <div class="header">
-            @await Component.InvokeAsync("Account")
-            @await Component.InvokeAsync("Admin")
-        </div>
+      
+            @await Component.InvokeAsync("Navbar", "UnLoginUser")
+     
        
     </header>
     <div class="container">

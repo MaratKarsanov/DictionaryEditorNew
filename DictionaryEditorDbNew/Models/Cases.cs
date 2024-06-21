@@ -11,8 +11,6 @@ namespace DictionaryEditorDbNew.Models
     {
         public Guid Id { get; set; }
         [AllowNull]
-        public OssetianWord Word { get; set; }
-        [AllowNull]
         public string Nominative { get; set; }
         [AllowNull]
         public string Genitive { get; set; }
