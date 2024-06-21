@@ -25,6 +25,7 @@ namespace DictionaryEditorNew.Areas.Redactor.Controllers
 
         public IActionResult Index(string returnToLastWord)
         {
+            ViewBag.NavbarType = "Redactor";
             if (!string.IsNullOrEmpty(returnToLastWord))
             {
                 return View(ossetianWordsDbRepository.GetWords());

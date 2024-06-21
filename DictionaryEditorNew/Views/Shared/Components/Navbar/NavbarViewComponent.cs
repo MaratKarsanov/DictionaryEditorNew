@@ -4,20 +4,20 @@ namespace DictionaryEditorNew.Views.Shared.Components.Navbar
 {
     public class NavbarViewComponent : ViewComponent
     {
-        public IViewComponentResult Invoke(string role)
+        public IViewComponentResult Invoke(dynamic viewBagNavbarType)
         {
-            if (role == "User")
-            {
-                return View("User");
-            }
-            else if(role == "Redactor")
-            {
-                return View("Redactor");
-            }
-            else if (role == "UnLoginUser")
+            if (viewBagNavbarType == null)
             {
                 return View("UnLoginUser");
             }
+            else if (viewBagNavbarType == "User")
+            {
+                return View("User");
+            }
+            else if(viewBagNavbarType == "Redactor")
+            {
+                return View("Redactor");
+            }         
             else
             {
                 return View("Admin");

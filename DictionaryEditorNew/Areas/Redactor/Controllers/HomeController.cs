@@ -14,9 +14,9 @@ namespace DictionaryEditorNew.Areas.Redactor.Controllers
             return View();
         }
 
-        public IActionResult Devs()
-        {
-            return View();
-        }
+        //public IActionResult Devs()
+        //{
+        //    return View();
+        //}
     }
 }

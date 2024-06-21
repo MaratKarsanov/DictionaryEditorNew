@@ -37,7 +37,8 @@ namespace DictionaryEditorNew.Controllers
         {
             string userLogin = Request.Cookies["userLogin"] ?? "User";
             User user = userRepository.TryGetByLogin(userLogin);
-            if(user == null) 
+            if(user != null)ViewBag.NavbarType = user.Role;
+            if (user == null) 
                 return View();
             else if(user.RoleName == "Admin")
                 return RedirectToAction("Index", "Home", new { area = "Admin"});
