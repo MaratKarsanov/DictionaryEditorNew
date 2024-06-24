@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-string connection = builder.Configuration.GetConnectionString("dictionary_json2");
+string connection = builder.Configuration.GetConnectionString("dictionary_json");
 
 
 builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connection));

@@ -53,7 +53,7 @@ namespace DictionaryEditorNew.DatabaseFulling
 
         public IActionResult Index()
         {
-            StreamReader reader = new StreamReader("wwwroot\\json\\json.json");
+            StreamReader reader = new StreamReader("wwwroot\\json\\JSONOssetWords.json");
 
             string json = reader.ReadToEnd();
 
