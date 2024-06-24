@@ -33,7 +33,7 @@ html {
     align-items: center;
 }
 
-    .logo img {
+    .logo a img {
         width: 50px;
         height: 50;
         margin-right: 10px;

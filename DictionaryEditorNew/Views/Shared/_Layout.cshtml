@@ -10,10 +10,7 @@
 </head>
 <body>
     <header>
-      
-            @await Component.InvokeAsync("Navbar", "UnLoginUser")
-     
-       
+        @await Component.InvokeAsync("Navbar", ViewBag.NavbarType)           
     </header>
     <div class="container">
         <main role="main" class="pb-3">

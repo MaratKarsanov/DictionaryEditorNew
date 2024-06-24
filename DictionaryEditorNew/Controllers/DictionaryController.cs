@@ -17,7 +17,8 @@ namespace DictionaryEditorNew.Controllers
             var userName = Request.Cookies["userLogin"];
            
             var user = userRepository.TryGetByLogin(userName);
-            ViewData["userRole"] = user.Role.Name;
+           
+            if(user!= null) ViewData["userRole"] = user.Role.Name;
 
             return View("Index");
            
