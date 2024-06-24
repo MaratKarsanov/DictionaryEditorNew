@@ -1,7 +1,7 @@
 ﻿using DictionaryEditorNew.Models;
-using DictionaryEditorDbNew;
 using Microsoft.AspNetCore.Mvc;
 using DictionaryEditorDbNew.Models;
+using DictionaryEditorDbNew.Repositories;
 
 namespace DictionaryEditorNew.Controllers
 {

@@ -1,9 +1,9 @@
-﻿using DictionaryEditorDbNew;
+﻿using DictionaryEditorDbNew.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DictionaryEditorNew.Controllers
 {
-    
+
     public class DictionaryController : Controller
     {
         private UserDbRepository userRepository;

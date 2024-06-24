@@ -5,22 +5,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DictionaryEditorDbNew
+namespace DictionaryEditorDbNew.Repositories
 {
-    public class DictionariesRepository
+    public class ExamplesDbRepository
     {
         private readonly DatabaseContext databaseContext;
-        public DictionariesRepository(DatabaseContext databaseContext)
+        public ExamplesDbRepository(DatabaseContext databaseContext)
         {
             this.databaseContext = databaseContext;
         }
 
-        public void AddDict(Dictionary newDict)
+        public void AddExample(Example example)
         {
-           // Dictionary newDict = new Dictionary() { Id = Guid.NewGuid(), Name = name };
-            databaseContext.Dictionaries.Add(newDict);
+            databaseContext.Examples.Add(example);
             databaseContext.SaveChanges();
         }
     }
 }
-    

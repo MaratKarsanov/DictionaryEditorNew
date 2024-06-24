@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 
 using DictionaryEditorDbNew;
 using DictionaryEditorNew;
+using DictionaryEditorDbNew.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

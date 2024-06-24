@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DictionaryEditorDbNew
+namespace DictionaryEditorDbNew.Repositories
 {
     public class OssetianWordsDbRepository
     {
@@ -20,8 +20,8 @@ namespace DictionaryEditorDbNew
         {
             //List < OssetianWord > words = new List < OssetianWord >();
             var first500Words = databaseContext.ForeignWords.Include(x => x.Examples).Include(x => x.RussianWords)
-                                       .OrderBy(w => w.Word) // Опционально, сортировка по Id или другому полю
                                        .Take(100)
+                                       .OrderBy(w => w.Word) // Опционально, сортировка по Id или другому полю
                                        .ToList();
             return first500Words;
 
@@ -30,7 +30,7 @@ namespace DictionaryEditorDbNew
         {
             return databaseContext.ForeignWords.Include(x => x.Examples).Include(x => x.RussianWords).FirstOrDefault(x => x.Id == id);
         }
-    
+
 
         public void AddWord(ForeignWord word)
         {

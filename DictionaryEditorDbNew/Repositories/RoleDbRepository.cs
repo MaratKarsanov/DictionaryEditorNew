@@ -1,6 +1,6 @@
 ﻿using DictionaryEditorDbNew.Models;
 
-namespace DictionaryEditorDbNew
+namespace DictionaryEditorDbNew.Repositories
 {
     public class RoleDbRepository
     {

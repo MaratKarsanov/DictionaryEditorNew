@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using DictionaryEditorDbNew;
+using DictionaryEditorDbNew.Repositories;
 using DictionaryEditorNew.Models;
 using Microsoft.AspNetCore.Mvc;
 

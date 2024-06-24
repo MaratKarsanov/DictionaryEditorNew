@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using DictionaryEditorDbNew.Models;
+using DictionaryEditorDbNew.Repositories;
 
 namespace DictionaryEditorNew.DatabaseFulling
 {
@@ -13,9 +14,9 @@ namespace DictionaryEditorNew.DatabaseFulling
         private readonly RussianWordsDbRepository russianWordsDbRepository;
         private readonly OssetianWordsDbRepository ossetianWordsDbRepository;
         private readonly ExamplesDbRepository examplesDbRepository;
+        private readonly DictionariesRepository dictionariesDbRepository;
         private readonly UserDbRepository userRepository;
         private readonly RoleDbRepository roleRepository;
-        private readonly DictionariesRepository dictionariesDbRepository;
 
         public LoadingController(DatabaseContext databaseContext,
             RussianWordsDbRepository russianWordsDbRepository,
@@ -53,7 +54,7 @@ namespace DictionaryEditorNew.DatabaseFulling
 
         public IActionResult Index()
         {
-            StreamReader reader = new StreamReader("wwwroot\\json\\JSONOssetWords.json");
+            StreamReader reader = new StreamReader("C:\\Users\\79187\\source\\repos\\DictionaryEditorNew4\\DictionaryEditorNew\\wwwroot\\json\\json.json");
 
             string json = reader.ReadToEnd();
 

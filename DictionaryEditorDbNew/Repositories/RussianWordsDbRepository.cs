@@ -5,12 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DictionaryEditorDbNew
+namespace DictionaryEditorDbNew.Repositories
 {
     public class RussianWordsDbRepository
     {
         private readonly DatabaseContext databaseContext;
-        
+
         public RussianWordsDbRepository(DatabaseContext databaseContext)
         {
             this.databaseContext = databaseContext;
@@ -26,7 +26,7 @@ namespace DictionaryEditorDbNew
             databaseContext.RussianWords.Add(word);
             databaseContext.SaveChanges();
         }
-        
+
         public void AddNewWord(string word, ForeignWord ossetWord)
         {
             RussianWord newWord = new RussianWord
