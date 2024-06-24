@@ -53,7 +53,7 @@ namespace DictionaryEditorNew.DatabaseFulling
 
         public IActionResult Index()
         {
-            StreamReader reader = new StreamReader("E:\\ProjactRubesh\\DictionaryEditor2\\DictionaryEditor2\\wwwroot\\json\\JSONOssetWords.json");
+            StreamReader reader = new StreamReader("wwwroot\\json\\json.json");
 
             string json = reader.ReadToEnd();
 

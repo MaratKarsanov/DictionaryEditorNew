@@ -9,7 +9,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
 
-string connection = builder.Configuration.GetConnectionString("dictionary_json");
+string connection = builder.Configuration.GetConnectionString("dictionary_json2");
 
 
 builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(connection));
@@ -48,6 +48,6 @@ app.MapControllerRoute(
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Loading}/{action=Index}/{id?}");
 
 app.Run();
