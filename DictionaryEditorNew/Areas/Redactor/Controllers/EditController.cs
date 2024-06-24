@@ -26,6 +26,7 @@ namespace DictionaryEditorNew.Areas.Redactor.Controllers
 
         public IActionResult Index(string returnToLastWord)
         {
+            ViewBag.NavbarType = "Redactor";
             if (!string.IsNullOrEmpty(returnToLastWord))
             {
                 return View(ossetianWordsDbRepository.GetWords());
@@ -46,16 +47,13 @@ namespace DictionaryEditorNew.Areas.Redactor.Controllers
         }
 
         [HttpPost]
-        public IActionResult SaveChanges(Guid id, string? word, string? singular, string? plural, Tense tense, string rusWords)
+        public IActionResult SaveChanges(Guid id, string? word, string rusWords)
         {
             ForeignWord ossetWord = ossetianWordsDbRepository.TryGetById(id);
             if (word != null) { ossetWord.Word = word; }
-            if (singular != null) { ossetWord.Singular = singular; }
-            if (plural != null) { ossetWord.Plural = plural; }
+           
           
-            if (tense == 0) ossetWord.Tense = Tense.thePresent;
-            else if ((int)tense == 1) ossetWord.Tense = Tense.thePast;
-            else if ((int)tense == 2) ossetWord.Tense = Tense.theFuture;
+           
 
             List<string> allRusTrans = rusWords.Split(new[] { ',', '.', ';', ':', '-', '\n', '\r', ' ' }, StringSplitOptions.RemoveEmptyEntries).ToList();
 

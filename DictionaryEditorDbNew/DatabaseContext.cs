@@ -12,7 +12,6 @@ namespace DictionaryEditorDbNew
         public DbSet<ForeignWord> ForeignWords { get; set; }
         public DbSet<RussianWord> RussianWords { get; set; }
         public DbSet<Example> Examples { get; set; }
-        public DbSet<Cases> Cases { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         //public DbSet<ForeignWordsRussianWords> ForeignWordsRussianWords { get; set; }

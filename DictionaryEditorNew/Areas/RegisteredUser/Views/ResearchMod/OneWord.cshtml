@@ -7,9 +7,6 @@
         <div class="one-word__info-main-info">
             <a class="one-word__info-main-info-word">@Model.Word</a>
 
-
-
-
         </div>
         <div class="one-word__info-secondary-info">
             <div>
@@ -32,27 +29,13 @@
             <div class="one-word__info-secondary-info__forms">
                 <div class="one-word__info-secondary-info__forms-singular">
                     <a>ед. число:</a>
-                    @if (Model.Singular != null)
-                    {
-                        <a>@Model.Singular</a>
-                    }
-                    else
-                    {
-                        <a>-</a>
-                    }
+                   
                     
                     
                 </div>
                 <div class="one-word__info-secondary-info__forms-plural">
                     <a>множ. число:</a>
-                    @if (Model.Plural != null)
-                    {
-                        <a>@Model.Plural</a>
-                    }
-                    else
-                    {
-                        <a>-</a>
-                    }
+                  
                 </div>
                 <div class="one-word__info-secondary-info__cases">
 
