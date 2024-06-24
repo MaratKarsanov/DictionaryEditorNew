@@ -9,6 +9,7 @@ namespace DictionaryEditorNew
         public MappingProfile()
         {
             CreateMap<User, UserViewModel>().ReverseMap();
+            CreateMap<Role, RoleViewModel>().ReverseMap();
         }
     }
 }

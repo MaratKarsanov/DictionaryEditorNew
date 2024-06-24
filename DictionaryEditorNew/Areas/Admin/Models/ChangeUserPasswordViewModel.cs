@@ -1,0 +1,15 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace DictionaryEditorNew.Areas.Admin.Models
+{
+    public class ChangeUserPasswordViewModel
+    {
+        [Required(ErrorMessage = "Не указан новый пароль")]
+        [StringLength(int.MaxValue, MinimumLength = 4, ErrorMessage = "Пароль должен быть длиннее 4 символов!")]
+        public string NewPassword { get; set; }
+
+        [Required(ErrorMessage = "Повторите новый пароль")]
+        [Compare("NewPassword", ErrorMessage = "Пароли не совпадают")]
+        public string RepeatedNewPassword { get; set; }
+    }
+}
