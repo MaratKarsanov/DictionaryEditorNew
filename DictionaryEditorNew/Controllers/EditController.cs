@@ -1,12 +1,13 @@
 ﻿using DictionaryEditorDbNew;
 using DictionaryEditorDbNew.Models;
+using DictionaryEditorDbNew.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics.Contracts;
 using System.Linq;
 
 
 namespace DictionaryEditorNew.Controllers
-{ 
+{
     public class EditController : Controller
     {
         private readonly OssetianWordsDbRepository ossetianWordsDbRepository;

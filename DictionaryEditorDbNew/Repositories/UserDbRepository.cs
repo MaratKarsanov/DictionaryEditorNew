@@ -1,7 +1,7 @@
 ﻿using DictionaryEditorDbNew.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace DictionaryEditorDbNew
+namespace DictionaryEditorDbNew.Repositories
 {
     public class UserDbRepository
     {

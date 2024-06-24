@@ -1,5 +1,6 @@
 ﻿using DictionaryEditorDbNew;
 using DictionaryEditorDbNew.Models;
+using DictionaryEditorDbNew.Repositories;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics.Contracts;
 using System.Linq;

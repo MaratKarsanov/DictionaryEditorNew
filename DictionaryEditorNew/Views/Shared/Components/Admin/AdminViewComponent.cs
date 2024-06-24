@@ -1,4 +1,4 @@
-﻿using DictionaryEditorDbNew;
+﻿using DictionaryEditorDbNew.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DictionaryEditorNew.Views.Shared.Components.Admin

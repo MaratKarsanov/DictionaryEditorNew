@@ -1,5 +1,5 @@
-﻿using DictionaryEditorDbNew;
-using DictionaryEditorDbNew.Models;
+﻿using DictionaryEditorDbNew.Models;
+using DictionaryEditorDbNew.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DictionaryEditorNew.Areas.Redactor.Controllers
