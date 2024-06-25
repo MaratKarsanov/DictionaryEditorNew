@@ -19,9 +19,9 @@ namespace DictionaryEditorNew.Areas.Redactor.Controllers
                 return RedirectToAction("Index", "ResearchMod");
             var user = userRepository.TryGetByLogin(userName);
             ViewData["userRole"] = user.Role.Name;
-            
-                return View("Index");
-            //else return RedirectToAction("Index", "ResearchMod");
+      
+            // return View("Index");
+            return RedirectToAction("Index", "ResearchMod", new { area = "" });
         }
     }
 }

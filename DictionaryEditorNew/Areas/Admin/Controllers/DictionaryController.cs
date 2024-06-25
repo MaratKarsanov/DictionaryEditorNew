@@ -15,13 +15,13 @@ namespace DictionaryEditorNew.Areas.Admin.Controllers
         public IActionResult Index()
         {
             var userName = Request.Cookies["userLogin"];
-            //if (userName is null || userName == string.Empty)
-            //    return RedirectToAction("Index", "ResearchMod");
+            if (userName is null || userName == string.Empty)
+                return RedirectToAction("Index", "ResearchMod");
             var user = userRepository.TryGetByLogin(userName);
             ViewData["userRole"] = user.Role.Name;
-            
-                return View("Index");
-            //else return RedirectToAction("Index", "ResearchMod");
+
+            // return View("Index");
+            return RedirectToAction("Index", "ResearchMod", new { userRole = user.Role.Name, area = "" });
         }
     }
 }
