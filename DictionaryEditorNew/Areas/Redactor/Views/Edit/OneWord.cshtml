@@ -4,18 +4,8 @@
     <h2>Режим редактирования</h2>
     <form method="post">
         <div class="research-mod__one-word__info">
-            <div class="one-word__info-main-info">
-                <input type="text" name="word" value="@Model.Word" class="form-control" />
 
-               
-
-                <select name="tense" class="form-control">
-                    <option value="thePast">прош.вр</option>
-                    <option value="thePresent">наст.вр</option>
-                    <option value="theFuture">будущ.вр</option>
-                </select>
-            </div>
-
+            <a class="one-word__info-main-info-word">@Model.Word</a>
             <div class="one-word__info-secondary-info">
                 <div class="one-word__info-secondary-info__russian-words">
                     <a>переводы слова</a>                             
@@ -34,39 +24,18 @@
                         </div>
                     }
                 </div>
-                <div class="one-word__info-secondary-info__forms">
-                    <div class="one-word__info-secondary-info__forms-singular">
-                        <label>ед. число:</label>
-                       
-                    </div>
-                    <div class="one-word__info-secondary-info__forms-plural">
-                        <label>множ. число:</label>
-                       
-                    </div>
-                    <div class="one-word__info-secondary-info__cases">
-                        
-                        <div class="one-word__info-secondary-info__cases-words">
-                            
-                        </div>
-                    </div>
-                </div>
+               
             </div>
 
 
             <button asp-controller="Edit" asp-action="SaveChanges" asp-route-id="@Model.Id" type="submit" class="btn btn-primary">Сохранить</button>
-            <a asp-area="Redactor" asp-controller="Edit" asp-action="Index" class="btn btn-secondary">Назад</a>
+            <a asp-area="Redactor" asp-controller="Edit" asp-action="BackToList" class="btn btn-secondary">Назад</a>
 
         </div>
     </form>
 </div>
 
-@{
-    string Check(string str)
-    {
 
-        return string.IsNullOrEmpty(str) ? "-" : str;
-    }
-}
 @{
     string Tranlations()
     {

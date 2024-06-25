@@ -35,6 +35,11 @@ namespace DictionaryEditorNew.Areas.Redactor.Controllers
                 return RedirectToAction("OneWord", "Edit", new { area = "Redactor", id = Guid.Parse(Request.Cookies["lastWordId"]) });
             return View(ossetianWordsDbRepository.GetWords());
         }
+        public IActionResult BackToList()
+        {
+           
+            return View("Index", ossetianWordsDbRepository.GetWords());
+        }
         public IActionResult OneWord(Guid id)
         {
             ForeignWord word = ossetianWordsDbRepository.TryGetById(id);

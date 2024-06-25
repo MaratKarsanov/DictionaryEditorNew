@@ -110,15 +110,15 @@ namespace DictionaryEditorNew.Controllers
         {
             string userLogin = Request.Cookies["userLogin"] ?? "User";
             User user = userRepository.TryGetByLogin(userLogin);
-            if(user != null)ViewBag.NavbarType = user.Role;
-            if (user == null) 
+            if (user != null) ViewBag.NavbarType = user.Role;
+            if (user == null)
                 return View();
-            else if(user.RoleName == "Admin")
-                return RedirectToAction("Index", "Home", new { area = "Admin"});
+            else if (user.RoleName == "Admin")
+                return RedirectToAction("Index", "Home", new { area = "Admin" });
             else if (user.RoleName == "User")
-                return RedirectToAction("Index", "Home", new { area = "RegisteredUser"});
+                return RedirectToAction("Index", "Home", new { area = "RegisteredUser" });
             else if (user.RoleName == "Redactor")
-                return RedirectToAction("Index", "Home", new { area = "Redactor"});
+                return RedirectToAction("Index", "Home", new { area = "Redactor" });
             else return View();
         }
 
