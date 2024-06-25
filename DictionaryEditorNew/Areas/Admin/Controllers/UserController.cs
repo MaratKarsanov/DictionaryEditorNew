@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
+using DictionaryEditorDbNew.Models;
 using DictionaryEditorDbNew.Repositories;
+using DictionaryEditorNew.Areas.Admin.Models;
 using DictionaryEditorNew.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,22 +11,25 @@ namespace DictionaryEditorNew.Areas.Admin.Controllers
     public class UserController : Controller
     {
         private UserDbRepository userRepository;
+        private RoleDbRepository roleRepository;
         private IMapper mapper;
         public UserController(UserDbRepository userRepository,
-            IMapper mapper)
+            IMapper mapper,
+            RoleDbRepository roleRepository)
         {
             this.userRepository = userRepository;
             this.mapper = mapper;
+            this.roleRepository = roleRepository;
         }
         public IActionResult Index()
         {
             return View(mapper.Map<List<UserViewModel>>(userRepository.GetAll()));
         }
-        //public IActionResult Edit(string login)
-        //{
-        //    var user = userRepository.TryGetByLogin(login);
-        //    return View(mapper.Map<UserViewModel>(user));
-        //}
+        public IActionResult Edit(string login)
+        {
+            var user = userRepository.TryGetByLogin(login);
+            return View(mapper.Map<UserViewModel>(user));
+        }
         //[HttpGet]
         //public IActionResult EditData(string login)
         //{
@@ -50,50 +55,44 @@ namespace DictionaryEditorNew.Areas.Admin.Controllers
         //    return RedirectToAction(nameof(Edit), new { login });
         //}
 
-        //[HttpGet]
-        //public IActionResult ChangePassword(string login)
-        //{
-        //    ViewData["login"] = login;
-        //    return View();
-        //}
+        [HttpGet]
+        public IActionResult ChangePassword(string login)
+        {
+            ViewData["login"] = login;
+            return View();
+        }
 
-        //[HttpPost]
-        //public IActionResult ChangePassword(ChangeUserPasswordViewModel password, string login)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return RedirectToAction(nameof(ChangePassword));
-        //    var user = userManager.FindByNameAsync(login).Result;
-        //    var newHashPassword = userManager.PasswordHasher.HashPassword(user, password.NewPassword);
-        //    user.PasswordHash = newHashPassword;
-        //    userManager.UpdateAsync(user).Wait();
-        //    return RedirectToAction(nameof(Index));
-        //}
+        [HttpPost]
+        public IActionResult ChangePassword(ChangeUserPasswordViewModel password, string login)
+        {
+            if (!ModelState.IsValid)
+                return RedirectToAction(nameof(ChangePassword));
+            userRepository.ChangePassword(login, password.NewPassword);
+            return RedirectToAction(nameof(Index));
+        }
 
-        //[HttpGet]
-        //public IActionResult ChangeRole(string login)
-        //{
-        //    var user = userManager.FindByNameAsync(login).Result;
-        //    var userRoles = userManager.GetRolesAsync(user).Result;
-        //    var roles = roleManager.Roles;
-        //    ViewData["login"] = user.UserName;
-        //    ViewBag.userRoles = userRoles.ToHashSet();
-        //    return View(mapper.Map<List<RoleViewModel>>(roles));
-        //}
+        [HttpGet]
+        public IActionResult ChangeRole(string login)
+        {
+            var user = userRepository.TryGetByLogin(login);
+            if (user is null)
+                throw new NullReferenceException("В репозитории нет пользователя с таким id");
+            ViewData["login"] = user.Login;
+            ViewData["roleName"] = user.Role.Name;
+            return View(roleRepository
+                .GetAll()
+                .Where(r => r.Name != user.Role.Name)
+                .Select(mapper.Map<RoleViewModel>));
+        }
 
-        //[HttpPost]
-        //public IActionResult ChangeRole(Dictionary<string, bool> userRolesViewModels, string login)
-        //{
-        //    if (!ModelState.IsValid)
-        //        return View();
-        //    var selectedRoles = userRolesViewModels.Select(x => x.Key);
-        //    var user = userManager.FindByNameAsync(login).Result;
-        //    var userRoles = userManager.GetRolesAsync(user).Result;
-        //    userManager.RemoveFromRolesAsync(user, userRoles).Wait();
-        //    userManager.AddToRolesAsync(user, selectedRoles).Wait();
-        //    if (login == User.Identity.Name && !userRolesViewModels.ContainsKey("Administrator"))
-        //        return RedirectToAction("Index", "Home", new { area = "" });
-        //    return RedirectToAction(nameof(Edit), new { login });
-        //}
+        [HttpPost]
+        public IActionResult ChangeRole(Role newRole, string login)
+        {
+            if (!ModelState.IsValid)
+                return View();
+            userRepository.ChangeRole(login, newRole.Name);
+            return RedirectToAction(nameof(Edit), new { login });
+        }
 
         //public IActionResult Delete(string login)
         //{
